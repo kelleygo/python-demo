@@ -6,17 +6,9 @@
 
 **要求：**
 
-- 接口路径：`POST /api/v1/ip/query`
+- 接口路径：`GET /api/v1/ip/{ip}`
 - 使用**离线库**实现，不依赖任何在线 API
 - 服务启动端口：`8000`
-
-## 入参
-
-```json
-{
-  "ip": "8.8.8.8"
-}
-```
 
 ## 期望返回字段
 
@@ -44,9 +36,7 @@
 
 **① 正常查询**
 ```bash
-curl -X POST http://localhost:8000/api/v1/ip/query \
-  -H "Content-Type: application/json" \
-  -d '{"ip": "8.8.8.8"}'
+curl http://localhost:8000/api/v1/ip/8.8.8.8
 ```
 
 期望返回（字段值仅供参考，以实际数据库为准）：
@@ -65,9 +55,7 @@ curl -X POST http://localhost:8000/api/v1/ip/query \
 
 **② 非法 IP**
 ```bash
-curl -X POST http://localhost:8000/api/v1/ip/query \
-  -H "Content-Type: application/json" \
-  -d '{"ip": "not-an-ip"}'
+curl http://localhost:8000/api/v1/ip/not-an-ip
 ```
 
 期望返回：
@@ -82,4 +70,3 @@ curl -X POST http://localhost:8000/api/v1/ip/query \
 - 离线 IP 数据库有多种选择，自行调研选型，可在此下载：https://github.com/PrxyHunter/GeoLite2/releases
 - 数据库文件不要提交到 git
 - 依赖写入 `requirements.txt`
-</thinking>
