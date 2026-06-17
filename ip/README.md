@@ -79,7 +79,7 @@ curl -X POST http://localhost:8000/api/v1/ip/query \
 
 ## 提示
 
-- 离线 IP 数据库有多种选择，自行调研选型
+- 离线 IP 数据库有多种选择，自行调研选型，可在此下载：https://github.com/PrxyHunter/GeoLite2/releases
 - 数据库文件不要提交到 git
 - 依赖写入 `requirements.txt`
 </thinking>
