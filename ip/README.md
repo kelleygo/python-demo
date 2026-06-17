@@ -6,7 +6,7 @@
 
 **要求：**
 
-- 接口路径：`GET /api/v1/ip/{ip}`
+- 接口路径：`GET /api/v1/ip/query?ip={ip}`
 - 使用**离线库**实现，不依赖任何在线 API
 - 服务启动端口：`8000`
 
@@ -36,7 +36,7 @@
 
 **① 正常查询**
 ```bash
-curl http://localhost:8000/api/v1/ip/8.8.8.8
+curl http://localhost:8000/api/v1/ip/query?ip=8.8.8.8
 ```
 
 期望返回（字段值仅供参考，以实际数据库为准）：
@@ -55,7 +55,7 @@ curl http://localhost:8000/api/v1/ip/8.8.8.8
 
 **② 非法 IP**
 ```bash
-curl http://localhost:8000/api/v1/ip/not-an-ip
+curl http://localhost:8000/api/v1/ip/query?ip=not-an-ip
 ```
 
 期望返回：
