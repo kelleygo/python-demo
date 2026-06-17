@@ -10,14 +10,19 @@ python-demo/
 │   ├── README.md
 │   ├── app.py
 │   └── requirements.txt
+├── qrcode/      # 二维码生成
+│   ├── README.md
+│   ├── app.py
+│   └── requirements.txt
 └── ...          # 后续功能模块
 ```
 
 ## 模块列表
 
 | 文件夹 | 功能 | 接口 |
-| ------ | ---- | ---- |
-| [ip](./ip/README.md) | IP 地理位置查询（离线） | `POST /api/v1/ip/query` |
+|--------|------|------|
+| [ip](./ip/README.md) | IP 地理位置查询（离线） | `GET /api/v1/ip/query?ip=xxx` |
+| [qrcode](./qrcode/README.md) | 二维码生成（离线） | `POST /api/v1/qrcode/generate` |
 
 ## 约定
 
